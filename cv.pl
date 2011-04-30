@@ -117,6 +117,7 @@ my $vars = {
 };
 
 foreach my $lang ( keys %$vars) {
+    $vars->{$lang}->{'lang'} = $lang;
     $tt->process( "cv.tmpl.html", $vars->{$lang}, "output/cv.$lang.html" )
       || die $tt->error(), "\n";
 }
